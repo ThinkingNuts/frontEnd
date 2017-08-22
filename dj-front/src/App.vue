@@ -1,9 +1,6 @@
 <template>
   <div id="app">
-    <transition name="fade" mode="out-in">
-      <router-view></router-view>
-    </transition>
-    
+    <router-view></router-view>
   </div>
 </template>
 
@@ -12,17 +9,40 @@ export default {
 }
 </script>
 
-<style lang="less">
-  [class^="el-icon-fa"], [class*=" el-icon-fa"] {
-    font-family:"FontAwesome" !important;
-    display: inline-block;
-    font-size: inherit;
-    text-rendering: auto;
+<style lang='scss'>
+  html,body {
+    height: 100%;
+  }
+  button, input, textarea {
+    border-radius: 5px;
+    outline: none;
+  }
+  button {
+      border: none;
+      padding: 6px 10px;
+      font-size: 14px;
+      display: block;
+      &.primary {
+        background-color: #20a0ff;
+        span {
+          color: #fff;
+        }
+      }
+      &.default {
+        background-color: #eee;
+        span {
+          color: #111;
+        }
+      }
+    }
+  *{
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+  #app {
+    height: 100%;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    color: #2c3e50;
   }
-
-  @import url("../node_modules/font-awesome/less/font-awesome");
-  @fa-css-prefix: el-icon-fa;
-  @import url("../node_modules/element-ui/lib/theme-default/index.css");
 </style>
